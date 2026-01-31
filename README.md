@@ -1,2 +1,1 @@
-# mr_robot_writeup
-beginner friendly write-up for the TryHackMe medium level ctf- Mr Robot
+writeup in progress script kitties
