@@ -1,8 +1,8 @@
 # Try Hack Me - Mr. Robot
 # Author: Atharva Bordavekar
 # Difficulty: Medium
-# Points: 
-# Vulnerabilities:
+# Points: 90
+# Vulnerabilities: Shell execution via vulnerable nmap version
 
 # Phase 1 - Reconnaissance:
 nmap scan: 
