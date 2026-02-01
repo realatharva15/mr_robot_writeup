@@ -19,51 +19,95 @@ lets start enumerating the webpage at port 80. nothing much interesting on this 
 ```bash
 gobuster dir -u http://<target_ip> -w /usr/share/wordlists/dirb/commmon.txt
 ```
-/.hta                 (Status: 403) [Size: 213]
-/.htaccess            (Status: 403) [Size: 218]
-/.htpasswd            (Status: 403) [Size: 218]
-/0                    (Status: 301) [Size: 0] [--> http://10.80.162.0/0/]
-/admin                (Status: 301) [Size: 233] [--> http://10.80.162.0/admin/]
-/atom                 (Status: 301) [Size: 0] [--> http://10.80.162.0/feed/atom/]
-/audio                (Status: 301) [Size: 233] [--> http://10.80.162.0/audio/]
-/blog                 (Status: 301) [Size: 232] [--> http://10.80.162.0/blog/]
-/css                  (Status: 301) [Size: 231] [--> http://10.80.162.0/css/]
-/dashboard            (Status: 302) [Size: 0] [--> http://10.80.162.0/wp-admin/]
-/favicon.ico          (Status: 200) [Size: 0]
-/feed                 (Status: 301) [Size: 0] [--> http://10.80.162.0/feed/]
-/image                (Status: 301) [Size: 0] [--> http://10.80.162.0/image/]
-/Image                (Status: 301) [Size: 0] [--> http://10.80.162.0/Image/]
-/images               (Status: 301) [Size: 234] [--> http://10.80.162.0/images/]
-/index.html           (Status: 200) [Size: 1158]
-/index.php            (Status: 301) [Size: 0] [--> http://10.80.162.0/]
-/intro                (Status: 200) [Size: 516314]
-/js                   (Status: 301) [Size: 230] [--> http://10.80.162.0/js/]
-/license              (Status: 200) [Size: 309]
-/login                (Status: 302) [Size: 0] [--> http://10.80.162.0/wp-login.php]
-/page1                (Status: 301) [Size: 0] [--> http://10.80.162.0/]
-/phpmyadmin           (Status: 403) [Size: 94]
-/rdf                  (Status: 301) [Size: 0] [--> http://10.80.162.0/feed/rdf/]
-/readme               (Status: 200) [Size: 64]
-/robots.txt           (Status: 200) [Size: 41]
-/robots               (Status: 200) [Size: 41]
-/rss                  (Status: 301) [Size: 0] [--> http://10.80.162.0/feed/]
-/rss2                 (Status: 301) [Size: 0] [--> http://10.80.162.0/feed/]
-/sitemap              (Status: 200) [Size: 0]
-/sitemap.xml          (Status: 200) [Size: 0]
-/video                (Status: 301) [Size: 233] [--> http://10.80.162.0/video/]
-/wp-admin             (Status: 301) [Size: 236] [--> http://10.80.162.0/wp-admin/]
-/wp-content           (Status: 301) [Size: 238] [--> http://10.80.162.0/wp-content/]
-/wp-config            (Status: 200) [Size: 0]
-/wp-cron              (Status: 200) [Size: 0]
-/wp-includes          (Status: 301) [Size: 239] [--> http://10.80.162.0/wp-includes/]
-/wp-load              (Status: 200) [Size: 0]
-/wp-login             (Status: 200) [Size: 2599]
-/wp-links-opml        (Status: 200) [Size: 227]
-/wp-mail              (Status: 500) [Size: 3074]
-/wp-settings          (Status: 500) [Size: 0]
-/wp-signup            (Status: 302) [Size: 0] [--> http://10.80.162.0/wp-login.php?action=register]
-/xmlrpc               (Status: 405) [Size: 42]
-/xmlrpc.php           (Status: 405) [Size: 42]
+`/.hta                 (Status: 403) [Size: 213]`
+
+`/.htaccess            (Status: 403) [Size: 218]`
+
+`/.htpasswd            (Status: 403) [Size: 218]`
+
+`/0                    (Status: 301) [Size: 0] `
+
+`/admin                (Status: 301) [Size: 233]`
+
+`/atom                 (Status: 301) [Size: 0]`
+
+`/audio                (Status: 301) [Size: 233]`
+
+`/blog                 (Status: 301) [Size: 232] `
+
+`/css                  (Status: 301) [Size: 231]` 
+
+`/dashboard            (Status: 302) [Size: 0] `
+
+`/favicon.ico          (Status: 200) [Size: 0]`
+
+`/feed                 (Status: 301) [Size: 0] `
+
+`/image                (Status: 301) [Size: 0]`
+
+`/Image                (Status: 301) [Size: 0]`
+
+`/images               (Status: 301) [Size: 234]`
+
+`/index.html           (Status: 200) [Size: 1158]`
+
+`/index.php            (Status: 301) [Size: 0] `
+
+`/intro                (Status: 200) [Size: 516314]`
+
+`/js                   (Status: 301) [Size: 230]`
+
+`/license              (Status: 200) [Size: 309]`
+
+`/login                (Status: 302) [Size: 0]`
+
+`/page1                (Status: 301) [Size: 0] `
+
+`/phpmyadmin           (Status: 403) [Size: 94]`
+
+`/rdf                  (Status: 301) [Size: 0] `
+
+`/readme               (Status: 200) [Size: 64]`
+
+`/robots.txt           (Status: 200) [Size: 41]`
+
+`/robots               (Status: 200) [Size: 41]`
+
+`/rss                  (Status: 301) [Size: 0] `
+
+`/rss2                 (Status: 301) [Size: 0] `
+
+`/sitemap              (Status: 200) [Size: 0]`
+
+`/sitemap.xml          (Status: 200) [Size: 0]`
+
+`/video                (Status: 301) [Size: 233] `
+
+`/wp-admin             (Status: 301) [Size: 236] `
+
+`/wp-content           (Status: 301) [Size: 238]` 
+
+`/wp-config            (Status: 200) [Size: 0]`
+
+`/wp-cron              (Status: 200) [Size: 0]`
+
+`/wp-includes          (Status: 301) [Size: 239]`
+
+`/wp-load              (Status: 200) [Size: 0]`
+
+`/wp-login             (Status: 200) [Size: 2599]`
+
+`/wp-links-opml        (Status: 200) [Size: 227]`
+
+`/wp-mail              (Status: 500) [Size: 3074]`
+
+`/wp-settings          (Status: 500) [Size: 0]`
+
+`/wp-signup            (Status: 302) [Size: 0] `
+
+`/xmlrpc               (Status: 405) [Size: 42]`
+
+`/xmlrpc.php           (Status: 405) [Size: 42]`
 
 this looks like a standard wordpress website. lets visit the /robots.txt to get some leads.
 
