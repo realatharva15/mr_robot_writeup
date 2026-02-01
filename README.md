@@ -115,6 +115,8 @@ this looks like a standard wordpress website. lets visit the /robots.txt to get 
 
 as you can see we get the location of key1. lets navigate to file and submit it. we also find a wordlist named fsocity.dic which could help us in the future to bruteforce some password maybe.
 
+# Phase 2 - Inirial Foothold:
+
 now we move on to the /wp-login directory to try to get the access of the admin dashboard. we can easily get a reverse shell using the theme editor. lets use wpscan to scan all possible users and later on bruteforce their passwords. sadly no luck with wpscan. so i decided to manually visit every directory in the search of finding credentials or even the slightlest hints
 
 after visiting the /license directory, i found a reference to that one episode when Elliot scolds Darlene for being a script kiddie when she wrote an exploit within 4 hours or something. but wait, we can scroll down!
@@ -128,6 +130,8 @@ after scrolling down we find a base64 encoded string which might be the credenti
 ```bash
 echo "ZWxsaW90OkVSMjgtMDY1Mgo=" | base64 -d
 ```
+# Shell as daemon:
+
 we find eliot's wordpress password! lets use this to login. and just like that we have a dashboard as elliot. now lets navigate to the appearance tab and then to the editor section. now select the 404 template. replace the contents with a php reverse shell. 
 
 ![phpreverseshell](https://github.com/realatharva15/mr_robot_writeup/blob/main/images/404.png)
@@ -143,7 +147,11 @@ now lets trigger the reverseshell by visiting the location where the template is
 # in your browser:
 http://<target_ip>/wp-content/themes/twentyfifteen/404.php
 ```
-we have a shell as daemon! lets quickly navigate to the home directory and search for some more clues and keys. turns ut we need to get a shell as robot to be able to access the key2. but wait! there is a password hash of robot present in his own directory. lets use john the ripper to crack the hash. rockyou.txt could not crack the hash whatsoever. remember the fsocity.dic wordlist we found earlier? maybe that could be the wordlist to crack this password.
+we have a shell as daemon! 
+
+# Shell as robot:
+
+lets quickly navigate to the home directory and search for some more clues and keys. turns ut we need to get a shell as robot to be able to access the key2. but wait! there is a password hash of robot present in his own directory. lets use john the ripper to crack the hash. rockyou.txt could not crack the hash whatsoever. remember the fsocity.dic wordlist we found earlier? maybe that could be the wordlist to crack this password.
 
 ```bash
 john --format=raw-md5 --wordlist=fsocity.dic robot_hash
@@ -155,6 +163,8 @@ surprisingly the password which gets cracked is in all caps. also it is the last
 ![crack](https://github.com/realatharva15/mr_robot_writeup/blob/main/images/crack.png)
 
 we get the actual password of user robot! lets login as robot and submit the key2.
+
+# Phase 3 - ROOT access:
 
 now i checked the privileges of the robot user and it does not have any privileges to run sudo, so our second best bet would be finding an unusual SUID.
 
